@@ -123,39 +123,32 @@ public class Game_Controler : MonoBehaviour
     {
         CurrentScore += change;
 
-        if (CurrentScore >= 100)
+        if (CurrentScore >= 50)
         {
             Win_Panel.SetActive(true);
-            ScoreDisplay.text = CurrentScore.ToString();
+            ScoreDisplay.text = "score is:" + CurrentScore.ToString();
             isTimerRunning = false;
         }
         else
         {
-
-
-
             if (CurrentScore <= 0)
             {
                 CurrentScore = 0;
-
                 Loss_Panel.SetActive(true);
-
-                ScoreDisplay.text = CurrentScore.ToString();
+                ScoreDisplay.text = "score is:" + CurrentScore.ToString();
                 isTimerRunning = false;
-
             }
             else
             {
-                ScoreDisplay.text = CurrentScore.ToString();
+                ScoreDisplay.text = "score is:" + CurrentScore.ToString();
                 isTimerRunning = false;
-
                 TimerDisplay.text = "";
-
             }
 
             CancelInvoke();
         }
     }
+
 
     private void UpdateTimer()
     {
